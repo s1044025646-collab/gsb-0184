@@ -1,0 +1,18 @@
+{
+  "name": "demo-ahu",
+  "steps": [
+    { "id": "oa", "type": "state", "input": { "p": 101.325, "t": 34, "rh": 0.65 } },
+    { "id": "ra", "type": "state", "input": { "p": 101.325, "t": 26, "rh": 0.55 } },
+    {
+      "id": "ma",
+      "type": "mix",
+      "p": 101.325,
+      "streams": [
+        { "from": "oa", "mDa": 0.4 },
+        { "from": "ra", "mDa": 1.1 }
+      ]
+    },
+    { "id": "cc", "type": "coil", "from": "ma", "mDa": 1.5, "tSurface": 8, "bypassFactor": 0.1 },
+    { "id": "sa", "type": "sensible", "from": "cc", "mDa": 1.5, "tOut": 20 }
+  ]
+}
