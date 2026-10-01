@@ -1,0 +1,15 @@
+{
+  "name": "psychro-service",
+  "version": "1.0.0",
+  "private": true,
+  "description": "湿空气状态与混风除湿过程计算后端（教学用）",
+  "type": "commonjs",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node --test dist/test/*.test.js",
+    "start": "node dist/src/api.js",
+    "cli": "node dist/src/cli.js",
+    "demo": "node dist/src/demo.js"
+  }
+}
+

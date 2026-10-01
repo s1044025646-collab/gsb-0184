@@ -1,0 +1,10 @@
+{
+  "name": "夏季空调箱：混风+冷却除湿",
+  "p": 101.325,
+  "steps": [
+    { "id": "oa", "type": "state", "state": { "T": 34, "rh": 0.65 } },
+    { "id": "ra", "type": "state", "state": { "T": 26, "rh": 0.6 } },
+    { "id": "mix", "type": "mix", "streams": [ { "from": "oa", "mda": 0.3 }, { "from": "ra", "mda": 0.9 } ] },
+    { "id": "coil", "type": "coil", "from": "mix", "mda": 1.2, "Ts": 8, "BF": 0.1 }
+  ]
+}
